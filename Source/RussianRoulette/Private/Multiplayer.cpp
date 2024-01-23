@@ -25,6 +25,18 @@ AMultiplayer::AMultiplayer() :
 			);
 		}
 	}
+	else
+	{
+		if(GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				10.f,
+				FColor::Red,
+				FString::Printf(TEXT("Found no Subsystem"))
+			);
+		}
+	}
 }
 
 // Called when the game starts or when spawned
@@ -101,7 +113,7 @@ void AMultiplayer::OnCreateSessionComplete(FName SessionName, bool bWasSuccess)
 		UWorld* World = GetWorld();
 		if(World)
 		{
-			World->ServerTravel(FString("/Game/ThirdPerson/Maps/ThirdPersonMap?listen"));
+			World->ServerTravel(FString("/Game/Maps/MainMap?listen"));
 		}
 	}
 	else
