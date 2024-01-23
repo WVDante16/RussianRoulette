@@ -1,12 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
 #include "Interfaces/OnlineSessionInterface.h"
 #include "Multiplayer.generated.h"
 
 UCLASS()
-class RUSSIANROULETTE_API AMultiplayer : public AActor
+class RUSSIANROULETTE_API AMultiplayer : public ACharacter
 {
 	GENERATED_BODY()
 public:
